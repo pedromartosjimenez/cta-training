@@ -1,0 +1,21 @@
+
+{
+    "name": "multi",
+    "version": "0.0.0",
+    "description": "It should multiply integers through Hasura API",
+    "main": "index.js",
+    "scripts": {
+      "start": "nodemon index.js",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "nodemon": "^2.0.15"
+    },
+    "dependencies": {
+      "@forrestjs/hooks": "^4.0.0",
+      "@forrestjs/service-fastify": "^4.0.0",
+      "@forrestjs/service-fastify-healthz": "^4.0.0"
+    }
+  }
