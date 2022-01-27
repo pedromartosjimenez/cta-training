@@ -26,6 +26,8 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
+      multi:
+        condition: service_healthy
     ports:
       - "${HASURA_PORT:-8080}:8080"
     environment:
@@ -35,6 +37,7 @@ services:
       HASURA_GRAPHQL_UNAUTHORIZED_ROLE: "anonymous"
       HASURA_GRAPHQL_ENABLE_CONSOLE: "true"
       HASURA_GRAPHQL_DEV_MODE: "true"
+      MULTI_BASE_URL : http://multi:4000
 
   multi:
     build: 
@@ -43,9 +46,12 @@ services:
       - "${MULTI_PORT:-4000}:4000"
     volumes:
       - ./multi/src:/usr/src/app/src:delegated
-    #environment:
-    #  NODE_ENV: development
-    #  HASURA_ENDPOINT: http://hasura:8080
-    #  HASURA_JWT_SECRET: 
-    # HEALTHCHECK:
-    #  test:...
+    # environment:
+    #   NODE_ENV: development
+    #   HASURA_ENDPOINT: http://hasura:8080
+    #   HASURA_JWT_SECRET: ${HASURA_JWT_SECRET:-h2leOvdgjwpV0As5L8rZlV3VDVOsOmwk} 
+    healthcheck:
+      test: ["CMD", "wget", "-qO", "-", "http://multi:4000/healthz"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
