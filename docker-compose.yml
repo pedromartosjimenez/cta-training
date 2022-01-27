@@ -35,3 +35,17 @@ services:
       HASURA_GRAPHQL_UNAUTHORIZED_ROLE: "anonymous"
       HASURA_GRAPHQL_ENABLE_CONSOLE: "true"
       HASURA_GRAPHQL_DEV_MODE: "true"
+
+  multi:
+    build: 
+      context: ./multi
+    ports:
+      - "${MULTI_PORT:-4000}:4000"
+    volumes:
+      - ./multi/src:/usr/src/app/src:delegated
+    #environment:
+    #  NODE_ENV: development
+    #  HASURA_ENDPOINT: http://hasura:8080
+    #  HASURA_JWT_SECRET: 
+    # HEALTHCHECK:
+    #  test:...
