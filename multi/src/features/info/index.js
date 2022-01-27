@@ -14,7 +14,7 @@ const infoFeature = {
     url: '/who',
     handler: whoAreWeRoute
   },{
-    method: 'GET',
+    method: 'POST',
     url: '/names',
     handler: namesListRoute
   }]

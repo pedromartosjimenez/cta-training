@@ -12,7 +12,7 @@ const namesListRoute = async (request, reply) => {
     .map(user => user.name)
     .map(name => name.toUpperCase());
 
-  reply.send(names);
+  reply.send({items: names});
 };
 
 module.exports = namesListRoute;
