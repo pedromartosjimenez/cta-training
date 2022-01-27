@@ -46,10 +46,11 @@ services:
       - "${MULTI_PORT:-4000}:4000"
     volumes:
       - ./multi/src:/usr/src/app/src:delegated
-    # environment:
-    #   NODE_ENV: development
-    #   HASURA_ENDPOINT: http://hasura:8080
-    #   HASURA_JWT_SECRET: ${HASURA_JWT_SECRET:-h2leOvdgjwpV0As5L8rZlV3VDVOsOmwk} 
+    environment:
+      NODE_ENV: development
+      HASURA_ENDPOINT: http://hasura:8080/v1/graphql
+      FOO: hohohoho
+      # HASURA_JWT_SECRET: ${HASURA_JWT_SECRET:-h2leOvdgjwpV0As5L8rZlV3VDVOsOmwk} 
     healthcheck:
       test: ["CMD", "wget", "-qO", "-", "http://multi:4000/healthz"]
       interval: 10s
