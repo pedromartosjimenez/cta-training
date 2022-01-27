@@ -1,7 +1,7 @@
 const homePageRoute = require('./home-page.route')
 
 const homePageFeature = ({ registerAction }) => {
-  console.log('hello world')
+  console.log('hello world: marco, fran')
 
   registerAction({
     hook: '$FASTIFY_GET',

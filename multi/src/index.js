@@ -14,6 +14,13 @@ runHookApp({
       port: 4000
     }
   },
+  apollo: {
+    client: {
+      config: {
+        uri: "https://8080-pedromartosjime-ctatrain-o2jgdryujch.ws-eu29.gitpod.io/v1/graphql"
+      }
+    }
+  },
   services: [
     apollo,
     fastify, 
