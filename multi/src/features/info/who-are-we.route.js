@@ -1,12 +1,5 @@
 const axios = require('axios');
-
-const GET_PUBLIC_USERS = `
-  query getUsers {
-    users {
-      name
-    }
-}
-`;
+const { GET_PUBLIC_USERS } = require('./queries');
 
 const whoAreWeRoute = async (request, reply) => {
 
