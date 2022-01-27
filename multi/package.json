@@ -14,6 +14,7 @@
     },
     "dependencies": {
         "@forrestjs/hooks": "^4.0.0",
+        "@forrestjs/service-apollo": "^4.0.0",
         "@forrestjs/service-fastify": "^4.0.0",
         "@forrestjs/service-fastify-healthz": "^4.0.0"
     }

@@ -1,4 +1,5 @@
 const { runHookApp } = require("@forrestjs/hooks");
+const apollo = require("@forrestjs/service-apollo");
 const fastify = require("@forrestjs/service-fastify");
 const fastifyHealthz = require("@forrestjs/service-fastify-healthz");
 
@@ -14,6 +15,7 @@ runHookApp({
     }
   },
   services: [
+    apollo,
     fastify, 
     fastifyHealthz
   ],
