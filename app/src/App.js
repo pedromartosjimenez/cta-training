@@ -7,6 +7,7 @@ const QUERY = gql`
     users {
       name
       expenses {
+        notes
         amount
       }
     }

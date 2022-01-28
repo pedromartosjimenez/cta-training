@@ -64,3 +64,5 @@ services:
       - "${MULTI_PORT:-3000}:3000"
     volumes:
       - ./app:/usr/src/app:delegated
+    environment:
+      HASURA_ENDPOINT: https://8080-pedromartosjime-ctatrain-o2jgdryujch.ws-eu29.gitpod.io/v1/graphql
