@@ -56,3 +56,11 @@ services:
       interval: 10s
       timeout: 5s
       retries: 20
+
+  app:
+    build: 
+      context: ./app
+    ports:
+      - "${MULTI_PORT:-3000}:3000"
+    volumes:
+      - ./app:/usr/src/app:delegated

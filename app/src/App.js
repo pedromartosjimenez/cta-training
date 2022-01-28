@@ -1,5 +1,6 @@
 import { useQuery, gql } from '@apollo/client'
 import { HelloWorld } from './HelloWorld';
+import { Expenses } from './Expenses';
 
 const QUERY = gql`
   query getMyUsers {
@@ -29,6 +30,7 @@ function App() {
           ))}
         </ul>
       )}
+      <Expenses/>
     </div>
   );
 }
